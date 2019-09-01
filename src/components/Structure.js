@@ -22,7 +22,7 @@ function Structure() {
         contentContainerId={contentContainerId}
         totalPageContainerId={totalPageContainerId}
       />
-      <Container fluid={true} id={contentContainerId} className={'content position-relative d-block main-column'}>
+      <Container fluid={true} id={contentContainerId} className='content position-relative d-block main-column'>
         <Image src="src/others/placeholder.png" fluid={true} />
         <Image src="src/others/placeholder.png" fluid={true} />
         <Image src="src/others/placeholder.png" fluid={true} />
