@@ -1,2 +1,1 @@
-# Portfolio-Web
-React app
+# Estructura básica de la página
