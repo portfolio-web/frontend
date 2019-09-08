@@ -6,30 +6,28 @@ import Image from "react-bootstrap/Image";
 function Structure() {
   //Values.
   const breakPoint = "md";
-  const totalPageContainerId = "total";
-  const contentContainerId = "content";
 
   //Styles.
   const mobile = `d-block d-${breakPoint}-none`; //For showing the element before breakpoint only.
   const navBar = "d-block";
 
   return (
-    <div id={totalPageContainerId}>
+    <div id="totalContainer">
       <TopNavBar
         className={navBar}
         breakPoint={breakPoint}
         sideBarClassName={mobile}
-        contentContainerId={contentContainerId}
-        totalPageContainerId={totalPageContainerId}
+        contentContainerId="mainColumn"
+        totalPageContainerId="totalContainer"
       />
-      <Container fluid={true} id={contentContainerId} className='content position-relative d-block main-column'>
-        <Image src="src/others/placeholder.png" fluid={true} />
-        <Image src="src/others/placeholder.png" fluid={true} />
-        <Image src="src/others/placeholder.png" fluid={true} />
-        <Image src="src/others/placeholder.png" fluid={true} />
-        <Image src="src/others/placeholder.png" fluid={true} />
-        <Image src="src/others/placeholder.png" fluid={true} />
-      </Container>
+      <div id="mainColumn" className="main-column">
+        <div id="firstSection" className="first-section">
+          <Container
+            id="firstSectionContent"
+            className="mobile-container first-section-content"
+          ></Container>
+        </div>
+      </div>
     </div>
   );
 }

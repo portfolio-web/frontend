@@ -1,9 +1,21 @@
 body {
-  background-color: cadetblue;
+  background-color: aquamarine;
 }
 
-.content {
-  top: 52px;
+.first-section {
+  background-color: lightgreen;
+}
+
+.first-section-content {
+  background-image: url("./others/background.png");
+  height: 1000px;
+  padding: 0;
+}
+
+.main-column {
+  position: relative;
+  top: 56px;
+  height: 3000px;
 }
 
 /* Position and sizing of burger button */
@@ -78,7 +90,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
 
 @media (max-width: 768px) {
-  .main-column {
-    padding: 0;
+  .mobile-container {
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
   }
 }
