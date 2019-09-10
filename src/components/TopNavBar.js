@@ -1,56 +1,51 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import PropTypes from "prop-types";
 import SideBar from "./SideBar";
+import Container from "react-bootstrap/Container";
 
-function TopNavBar({
-  className,
-  breakPoint,
-  sideBarClassName,
-  contentContainerId,
-  totalPageContainerId
-}) {
+function TopNavBar({ breakPoint, contentContainerId, totalPageContainerId }) {
+  const mobileOnly = `d-block d-${breakPoint}-none`;
+
   return (
     <Navbar
       bg="secondary"
       variant="dark"
       expand={breakPoint}
       fixed="top"
-      className={className}
+      className="nav-bar"
     >
       <SideBar
-        className={sideBarClassName}
-        burgerButtonClassName={sideBarClassName}
+        className={mobileOnly}
+        burgerButtonClassName={mobileOnly}
         totalPageContainerId={totalPageContainerId}
         contentContainerId={contentContainerId}
       />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
+      <Container>
+        <Navbar.Collapse>
+          <Nav className="mr-auto">
+            <Nav.Link href="#home" className="nav-button">
+              home
+            </Nav.Link>
+            <Nav.Link href="#resume" className="nav-button">
+              resume
+            </Nav.Link>
+            <Nav.Link href="#portfolio" className="nav-button">
+              portfolio
+            </Nav.Link>
+            <Nav.Link href="#contact" className="nav-button">
+              contact
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 }
 
 TopNavBar.propTypes = {
-  className: PropTypes.string,
   breakPoint: PropTypes.string.isRequired,
-  sideBarClassName: PropTypes.string,
   contentContainerId: PropTypes.string.isRequired,
   totalPageContainerId: PropTypes.string.isRequired
 };

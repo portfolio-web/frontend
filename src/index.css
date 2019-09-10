@@ -1,21 +1,62 @@
 body {
-  background-color: aquamarine;
+  background-color: #282828;
+  color: #ffffff;
 }
 
 .first-section {
-  background-color: lightgreen;
+  background-color: #282828;
 }
 
 .first-section-content {
   background-image: url("./others/background.png");
+  background-position: 40% top;
+  padding: 56px 0 0 0;
   height: 1000px;
-  padding: 0;
+  position: relative;
 }
 
 .main-column {
-  position: relative;
-  top: 56px;
-  height: 3000px;
+  align-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .mobile-container {
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
+  }
+}
+
+.nav-button {
+  color: #ffffff !important;
+  font-size: 20px;
+  margin: 0 30px;
+}
+
+.nav-bar {
+  background-color: rgba(46, 46, 46, 0.5) !important;
+}
+
+.mm-box {
+  position: absolute;
+  right: 0;
+  top: 164px;
+  width: 551px;
+  height: 331px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px 0 0 20px;
+}
+
+.mm {
+  margin: 10px 92px 0 20px;
+  font-size: 75px;
+  text-align: end;
+  border-bottom: 5px solid rgba(255, 255, 255, 1);
+}
+
+.description {
+  margin: 10px 92px 10px 20px;
+  text-align: end;
 }
 
 /* Position and sizing of burger button */
@@ -87,12 +128,4 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-  .mobile-container {
-    padding: 0px;
-    margin: 0px;
-    max-width: 100%;
-  }
 }

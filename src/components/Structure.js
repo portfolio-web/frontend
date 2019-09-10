@@ -1,22 +1,16 @@
 import React from "react";
 import TopNavBar from "./TopNavBar";
 import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
+import MMBox from "./MMBox";
 
 function Structure() {
   //Values.
   const breakPoint = "md";
 
-  //Styles.
-  const mobile = `d-block d-${breakPoint}-none`; //For showing the element before breakpoint only.
-  const navBar = "d-block";
-
   return (
     <div id="totalContainer">
       <TopNavBar
-        className={navBar}
         breakPoint={breakPoint}
-        sideBarClassName={mobile}
         contentContainerId="mainColumn"
         totalPageContainerId="totalContainer"
       />
@@ -25,7 +19,9 @@ function Structure() {
           <Container
             id="firstSectionContent"
             className="mobile-container first-section-content"
-          ></Container>
+          >
+            <MMBox />
+          </Container>
         </div>
       </div>
     </div>
