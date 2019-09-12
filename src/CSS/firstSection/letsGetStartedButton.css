@@ -1,0 +1,20 @@
+.get-started {
+  position: absolute;
+  top: 535px;
+  right: 92px;
+  background-color: rgb(81, 166, 135);
+  border-width: 0;
+  border-radius: 20px;
+  padding: 15px 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .get-started {
+    top: 550px;
+    right: 30px;
+  }
+}

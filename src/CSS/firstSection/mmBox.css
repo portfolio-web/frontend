@@ -1,0 +1,52 @@
+.mm-box {
+  position: absolute;
+  right: 0;
+  top: 164px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px 0 0 20px;
+}
+
+.mm-title {
+  margin: 10px 92px 0 auto;
+  width: 5em;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 90px;
+  text-align: end;
+}
+
+.mm-title::after {
+  display: block;
+  content: "";
+  margin: 10px 0 5px auto;
+  width: 25%;
+  border-bottom: 3px solid rgba(255, 255, 255, 1);
+}
+
+.mm-description {
+  margin: 10px 92px 20px 20px;
+  text-align: end;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  width: 25em;
+}
+
+@media (max-width: 768px) {
+  .mm-title {
+    margin-right: 30px;
+    font-size: 75px;
+  }
+
+  .mm-description {
+    margin-right: 30px;
+    margin-left: auto;
+    font-size: 13px;
+    width: 22em;
+  }
+
+  .mm-box {
+    top: 250px;
+    background-color: transparent;
+  }
+}
