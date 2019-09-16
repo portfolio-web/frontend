@@ -1,6 +1,6 @@
 .get-started {
   position: absolute;
-  top: 535px;
+  top: 565px;
   right: 92px;
   background-color: rgb(81, 166, 135);
   border-width: 0;
@@ -14,7 +14,7 @@
 
 @media (max-width: 768px) {
   .get-started {
-    top: 550px;
+    top: 580px;
     right: 30px;
   }
 }

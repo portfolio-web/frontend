@@ -1,8 +1,10 @@
 import React from "react";
 import TopNavBar from "./TopNavBar";
-import Container from "react-bootstrap/Container";
-import MMBox from "./MMBox";
-import Button from "react-bootstrap/Button";
+import { Switch, Route } from "react-router-dom";
+import Home from "./sections/home/Home";
+import Resume from "./sections/resume/Resume";
+import Portfolio from "./sections/portfolio/Portfolio";
+import Contact from "./sections/contact/Contact";
 
 function Structure() {
   //Values.
@@ -16,16 +18,12 @@ function Structure() {
         totalPageContainerId="totalContainer"
       />
       <div id="mainColumn" className="main-column">
-        <div id="firstSection" className="first-section">
-          <Container
-            id="firstSectionContent"
-            className="mobile-container first-section-content"
-          >
-            <div className="white-line" />
-            <MMBox />
-            <Button className="get-started">{"LET'S GET STARTED"}</Button>
-          </Container>
-        </div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
       </div>
     </div>
   );

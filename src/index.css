@@ -1,3 +1,4 @@
 @import "./CSS/sideBar.css";
-@import "./CSS/firstSection/firstSection.css";
+@import "./CSS/homeStyles/home.css";
+@import "./CSS/placeHolderStyles.css";
 @import "./CSS/general.css";

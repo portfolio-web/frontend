@@ -1,0 +1,18 @@
+.resume-container {
+  background-color: lightcoral;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 10% auto auto auto;
+  padding: 1em;
+  background-color: fuchsia;
+}
+
+.lorem-ipsum {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}

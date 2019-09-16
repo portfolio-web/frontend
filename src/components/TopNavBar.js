@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import PropTypes from "prop-types";
 import SideBar from "./SideBar";
 import Container from "react-bootstrap/Container";
+import Link from "react-router-dom/Link";
 
 function TopNavBar({ breakPoint, contentContainerId, totalPageContainerId }) {
   const mobileOnly = `d-block d-${breakPoint}-none`;
@@ -25,18 +26,18 @@ function TopNavBar({ breakPoint, contentContainerId, totalPageContainerId }) {
       <Container>
         <Navbar.Collapse>
           <Nav className="mr-auto">
-            <Nav.Link href="#home" className="nav-button">
+            <Link to="/" className="nav-button">
               home
-            </Nav.Link>
-            <Nav.Link href="#resume" className="nav-button">
+            </Link>
+            <Link to="/resume" className="nav-button">
               resume
-            </Nav.Link>
-            <Nav.Link href="#portfolio" className="nav-button">
+            </Link>
+            <Link to="/portfolio" className="nav-button">
               portfolio
-            </Nav.Link>
-            <Nav.Link href="#contact" className="nav-button">
+            </Link>
+            <Link to="/contact" className="nav-button">
               contact
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

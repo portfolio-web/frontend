@@ -1,1 +1,1 @@
-# Estructura básica de la página
+# Just a simple portfolio for developers and designers.

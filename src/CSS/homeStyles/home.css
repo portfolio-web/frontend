@@ -1,11 +1,7 @@
 @import "./mmBox.css";
 @import "./letsGetStartedButton.css";
 
-.first-section {
-  background-color: #282828;
-}
-
-.first-section-content {
+.home-container {
   background-image: url("../../others/background.png");
   background-color: rgb(48, 48, 48);
   background-position: 40% top;
@@ -22,9 +18,9 @@
 }
 
 @media (max-width: 768px) {
-  .first-section-content {
+  .home-container {
     background-position: 15% -110px;
-    background-size: 1092px 614px; /* 85% */
+    background-size: 1161px 652px; /* 85% */
   }
 
   .white-line {
