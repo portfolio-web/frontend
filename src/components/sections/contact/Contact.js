@@ -1,9 +1,13 @@
 import React from "react";
-import Section from "../Section";
+import NavigableSection from "../../toolComponents/NavigableSection";
 
 function Resume() {
   return (
-    <Section title="resume" className="resume-container">
+    <NavigableSection
+      path="/contact"
+      title="contact"
+      className="resume-container"
+    >
       <h1 className="title">{"Contact Section"}</h1>
       <p className="lorem-ipsum">
         Sunt aute ullamco voluptate ipsum mollit qui Lorem Lorem qui culpa
@@ -30,7 +34,7 @@ function Resume() {
         anim. Pariatur ea cupidatat nulla aliqua mollit ea velit sunt officia.
         Aliqua id velit commodo id qui sunt sint aute reprehenderit do anim.
       </p>
-    </Section>
+    </NavigableSection>
   );
 }
 

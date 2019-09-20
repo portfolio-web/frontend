@@ -1,31 +1,29 @@
 import React from "react";
 import TopNavBar from "./TopNavBar";
-import { Switch, Route } from "react-router-dom";
 import Home from "./sections/home/Home";
 import Resume from "./sections/resume/Resume";
 import Portfolio from "./sections/portfolio/Portfolio";
 import Contact from "./sections/contact/Contact";
+import { BrowserRouter as Router } from "react-router-dom";
+import { breakPoint } from "../others/values";
 
 function Structure() {
-  //Values.
-  const breakPoint = "md";
-
   return (
-    <div id="totalContainer">
-      <TopNavBar
-        breakPoint={breakPoint}
-        contentContainerId="mainColumn"
-        totalPageContainerId="totalContainer"
-      />
-      <div id="mainColumn" className="main-column">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/resume" component={Resume} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+    <Router>
+      <div id="totalContainer">
+        <TopNavBar
+          breakPoint={breakPoint}
+          contentContainerId="mainColumn"
+          totalPageContainerId="totalContainer"
+        />
+        <div id="mainColumn" className="main-column">
+          <Home>Home</Home>
+          <Resume>Resume</Resume>
+          <Contact>Contact</Contact>
+          <Portfolio>Portfolio</Portfolio>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
