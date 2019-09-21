@@ -5,7 +5,12 @@ import NavigableSection from "../../toolComponents/NavigableSection";
 
 function Home() {
   return (
-    <NavigableSection path="/" title="home" className="home-container">
+    <NavigableSection
+      pathMustBeExact
+      path="/"
+      sectionName="home"
+      className="home-container"
+    >
       <div className="white-line" />
       <MMBox />
       <Button className="get-started">{"LET'S GET STARTED"}</Button>

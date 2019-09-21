@@ -5,7 +5,7 @@ function Resume() {
   return (
     <NavigableSection
       path="/resume"
-      title="resume"
+      sectionName="resume"
       className="resume-container"
     >
       <h1 className="title">{"Resumé Section"}</h1>

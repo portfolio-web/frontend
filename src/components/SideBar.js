@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { push as Menu } from "react-burger-menu";
-import Link from "react-router-dom/Link";
+import { Link } from "react-router-dom";
 
 function SideBar({ totalPageContainerId, contentContainerId, ...props }) {
   return (

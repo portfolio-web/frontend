@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import PropTypes from "prop-types";
 import SideBar from "./SideBar";
 import Container from "react-bootstrap/Container";
-import Link from "react-router-dom/Link";
+import { Link } from "react-router-dom";
 
 function TopNavBar({ breakPoint, contentContainerId, totalPageContainerId }) {
   const mobileOnly = `d-block d-${breakPoint}-none`;

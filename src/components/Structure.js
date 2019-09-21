@@ -8,6 +8,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { breakPoint } from "../others/values";
 
 function Structure() {
+  const scrollToSettedSection = () => {
+    console.log(location.pathname);
+  };
+
   return (
     <Router>
       <div id="totalContainer">
@@ -19,9 +23,10 @@ function Structure() {
         <div id="mainColumn" className="main-column">
           <Home>Home</Home>
           <Resume>Resume</Resume>
-          <Contact>Contact</Contact>
           <Portfolio>Portfolio</Portfolio>
+          <Contact>Contact</Contact>
         </div>
+        {scrollToSettedSection()}
       </div>
     </Router>
   );
