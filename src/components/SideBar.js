@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { push as Menu } from "react-burger-menu";
-import ScrollingLink from "./toolComponents/ScrollingLink";
+import Link from "react-router-dom/Link";
 
 function SideBar({ totalPageContainerId, contentContainerId, ...props }) {
   return (
@@ -13,18 +13,10 @@ function SideBar({ totalPageContainerId, contentContainerId, ...props }) {
       className={props.className}
       burgerButtonClassName={props.burgerButtonClassName}
     >
-      <ScrollingLink toPath="/" toComponentNamed="home">
-        Home
-      </ScrollingLink>
-      <ScrollingLink toPath="/resume" toComponentNamed="resume">
-        Resume
-      </ScrollingLink>
-      <ScrollingLink toPath="/portfolio" toComponentNamed="portfolio">
-        Portfolio
-      </ScrollingLink>
-      <ScrollingLink toPath="/contact" toComponentNamed="contact">
-        Contact
-      </ScrollingLink>
+      <Link to="/">Home</Link>
+      <Link to="/resume">Resume</Link>
+      <Link to="/portfolio">Portfolio</Link>
+      <Link to="/contact">Contact</Link>
     </Menu>
   );
 }
