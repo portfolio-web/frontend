@@ -6,47 +6,36 @@ import { Element as Scrollable, scroller } from "react-scroll";
 import { scrollType } from "../../others/values";
 import VisibilitySensor from "react-visibility-sensor";
 
-/* Usamos Route con la prop children (pasada entre etiquetas <Route> <Route/>) para renderizar
-todos los componentes aún si la URL no corresponde con el path especificado.
-¿Por qué usar esto y no simplemente ubicar todos los componentes solos? Esto permite
-ejecutar acciones o modificar un componente cuando su path coincide (match) o no con la URL,
-en tiempo real. */
-
 function NavigableSection({
   path,
   pathMustBeExact,
   children,
-  sectionName,
+  title,
+  visibilityController,
   ...props
 }) {
   /* En este componente estamos haciendo tres cosas:
       i) Asignar una ruta o path a cada sección a través de <Route>.
       ii) Hacer scrolleable (es decir, encontrable por el scroller) a la sección con <Scrollable>,
       así como scrollear automáticamente hasta aquí cada vez que el path coincide con la URL. Esto
-      es posible gracias al parámetro match que recibe la función pasada a children de <Route>.
-      iii) Detectar visibilidad de la sección con <VisibilitySensor> y, a través de las props de 
-      <Route> (history y location), pushear el path de tal sección hacia la URL. 
+      es posible gracias al parámetro match que recibe la función pasada como children de <Route>.
+      iii) Detectar visibilidad de la sección con <VisibilitySensor> y un visibilityController pasado
+      desde cada sección. Luego a través de las props de <Route> (history y location), pushear el 
+      path de tal sección hacia la URL.
   */
 
   const [visible, setVisibility] = useState(false);
 
-  /* Scrollea hasta esta sección. La identifica usando el mismo nombre que se pasó en
-  <Scrollable name={sectionName}> </Scrollable> */
-  const scrollHere = () => {
-    scroller.scrollTo(sectionName, scrollType);
-  };
+  const restOfChildren = children;
 
-  /* Si hay match y no es visible, entonces ejecuta scrollHere.*/
-  const tryScrollHere = pathMatch => {
-    if (pathMatch && !visible) {
-      setTimeout(scrollHere, 10);
-    }
+  const scrollHere = () => {
+    scroller.scrollTo(title, scrollType);
   };
 
   /* Recibe la history y location del <Route> que envuelve esta sección, y devuelve una función 
   que maneja el estado visible-noVisible de esta sección. Dicho handler (onVisibiltyChange) pushea 
-  el path de esta sección si es visible, o no hace nada de lo contrario. */
-  const getOnVisibilityChangeHandler = (history, location) => {
+  el path de esta sección si pasa a ser visible, o bien pushea un path nulo si pasa a ser no visible. */
+  const getHandler = (history, location) => {
     const onVisibilityChange = isVisible => {
       if (!visible && isVisible) {
         //Si no era visible y pasó a ser visible...
@@ -57,7 +46,6 @@ function NavigableSection({
         history.push("/--", location.state);
         setVisibility(false);
       }
-      /* Con esta forma evitamos que se repita visibilidad si ya es visible*/
     };
 
     return onVisibilityChange;
@@ -65,20 +53,21 @@ function NavigableSection({
 
   return (
     <Route exact={pathMustBeExact} path={path}>
-      {({ match, history, location }) => (
-        <>
-          <VisibilitySensor
-            onChange={getOnVisibilityChangeHandler(history, location)}
-          >
-            <Scrollable name={sectionName}>
-              <Section title={sectionName} {...props}>
-                {children}
-              </Section>
-            </Scrollable>
-          </VisibilitySensor>
-          {tryScrollHere(match)}
-        </>
-      )}
+      {({ match, history, location }) => {
+        //Si hay match path-URL y no es visible, se scrollea hasta la sección.
+        if (match && !visible) setTimeout(scrollHere, 10);
+
+        return (
+          <Scrollable name={title}>
+            <Section title={title} {...props}>
+              <VisibilitySensor onChange={getHandler(history, location)}>
+                {visibilityController}
+              </VisibilitySensor>
+              {restOfChildren}
+            </Section>
+          </Scrollable>
+        );
+      }}
     </Route>
   );
 }
@@ -86,8 +75,10 @@ function NavigableSection({
 NavigableSection.propTypes = {
   path: PropTypes.string.isRequired,
   pathMustBeExact: PropTypes.bool,
-  sectionName: PropTypes.string.isRequired,
-  children: PropTypes.element
+  title: PropTypes.string.isRequired,
+  children: PropTypes.element,
+  visibilityController: PropTypes.element.isRequired,
+  ...Section.propTypes
 };
 
 export default NavigableSection;

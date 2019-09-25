@@ -2,13 +2,16 @@ import React from "react";
 import NavigableSection from "../../toolComponents/NavigableSection";
 
 function Resume() {
+  const visibilityController = <h1 className="title">{"Portfolio Section"}</h1>;
+
   return (
     <NavigableSection
       path="/portfolio"
-      sectionName="portfolio"
+      title="portfolio"
       className="resume-container"
+      visibilityController={visibilityController}
     >
-      <h1 className="title">{"Portfolio Section"}</h1>
+      {/*visibilityController*/}
       <p className="lorem-ipsum">
         Sunt aute ullamco voluptate ipsum mollit qui Lorem Lorem qui culpa
         reprehenderit esse. Consequat enim adipisicing sunt reprehenderit ut

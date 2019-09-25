@@ -2,16 +2,16 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 
-/*Just the section without routing*/
+/*Just the pure section without navigation*/
 
-function Section({ title, className, ...props }) {
+function Section({ title, className, children }) {
   return (
     <div id={title} className="section">
       <Container
         id={`${title}Content`}
         className={`mobile-container ${className} section-content`}
       >
-        {props.children != null ? props.children : <h1>{title}</h1>}
+        {children != null ? children : <h1>{title}</h1>}
       </Container>
     </div>
   );
@@ -20,7 +20,9 @@ function Section({ title, className, ...props }) {
 Section.propTypes = {
   title: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-  children: PropTypes.node
+  children: PropTypes.element,
+  onVisibilityChange: PropTypes.func.isRequired,
+  visibilityController: PropTypes.element.isRequired
 };
 
 export default Section;

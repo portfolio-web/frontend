@@ -5,15 +5,18 @@ import NavigableSection from "../../toolComponents/NavigableSection";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const visibilityController = <MMBox />;
+
   return (
     <NavigableSection
       pathMustBeExact
       path="/"
-      sectionName="home"
+      title="home"
       className="home-container"
+      visibilityController={visibilityController}
     >
+      {/*visibilityController*/}
       <div className="white-line" />
-      <MMBox />
       <Button as={Link} to="/contact" className="get-started">
         {"LET'S GET STARTED"}
       </Button>
