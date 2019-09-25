@@ -56,11 +56,14 @@ function NavigableSection({
       {({ match, history, location }) => {
         //Si hay match path-URL y no es visible, se scrollea hasta la sección.
         if (match && !visible) setTimeout(scrollHere, 10);
-
+        const onVisibilityChangeHandler = getHandler(history, location);
         return (
           <Scrollable name={title}>
             <Section title={title} {...props}>
-              <VisibilitySensor onChange={getHandler(history, location)}>
+              <VisibilitySensor
+                onChange={onVisibilityChangeHandler}
+                partialVisibility={true}
+              >
                 {visibilityController}
               </VisibilitySensor>
               {restOfChildren}
