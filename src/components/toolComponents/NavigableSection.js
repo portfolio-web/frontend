@@ -60,10 +60,7 @@ function NavigableSection({
         return (
           <Scrollable name={title}>
             <Section title={title} {...props}>
-              <VisibilitySensor
-                onChange={onVisibilityChangeHandler}
-                partialVisibility={true}
-              >
+              <VisibilitySensor onChange={onVisibilityChangeHandler}>
                 {visibilityController}
               </VisibilitySensor>
               {restOfChildren}
