@@ -1,7 +1,7 @@
 .get-started {
-  position: absolute;
-  top: 565px;
-  right: 92px;
+  float: right;
+  clear: right;
+  margin: 31px 92px 51px auto;
   background-color: rgb(81, 166, 135);
   border-width: 0;
   border-radius: 20px;

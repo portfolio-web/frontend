@@ -1,9 +1,16 @@
+/* Notas sobre CSS: 
+> Las forma de display establecen el comportamiento por defecto de su tamaño, no
+cómo se posicionarán. block: tiende a ocupar todo el ancho, inline: tiende a ser sólo sí mismo.
+Los block no se dejan establecer su altura según el margin de su contenido. */
+
 .mm-box {
-  position: absolute;
-  right: 0;
-  top: 164px;
-  background-color: rgba(0, 0, 0, 0.3);
+  float: right;
+  clear: right;
+  margin: 82px 0 auto auto;
+  background-color: #0000004d;
   border-radius: 20px 0 0 20px;
+  width: auto;
+  height: auto;
 }
 
 .mm-title {
@@ -24,7 +31,7 @@
 }
 
 .mm-description {
-  margin: 10px 92px 20px 20px;
+  margin: 10px 92px 20px auto;
   text-align: end;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;

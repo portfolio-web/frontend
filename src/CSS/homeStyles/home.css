@@ -6,9 +6,14 @@
   background-color: rgb(48, 48, 48);
   background-position: 40% top;
   padding-top: 56px;
-  height: 750px;
-  position: relative;
   background-repeat: no-repeat;
+  height: auto;
+}
+
+.home-container::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .white-line {
