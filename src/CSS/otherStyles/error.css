@@ -1,0 +1,24 @@
+.error-warning {
+  float: left;
+  width: 100%;
+}
+
+.error-warning::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.error-warning-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  margin: 15px 0 0 0;
+}
+
+.error-warning-icon {
+  float: left;
+  font-size: 20px;
+  padding: 0;
+  margin: 10px;
+  color: rgb(81, 166, 135);
+}

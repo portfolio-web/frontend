@@ -1,4 +1,16 @@
-@import "./CSS/sideBar.css";
-@import "./CSS/homeStyles/home.css";
-@import "./CSS/placeHolderStyles.css";
 @import "./CSS/general.css";
+
+@import "./CSS/otherStyles/other.css";
+@import "./CSS/homeStyles/home.css";
+@import "./CSS/resumeStyles/resume.css";
+@import "./CSS/portfolioStyles/portfolio.css";
+@import "./CSS/contactStyles/contact.css";
+
+/* CSS notes:
+
+> (Bug?) Containers do not count margins of default block-level boxes in them as part of the
+content. They do count it if any border of padding is specified. This is the only case in which
+the margin is not counted.
+
+
+*/

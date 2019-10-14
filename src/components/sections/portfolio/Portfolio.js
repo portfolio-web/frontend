@@ -1,8 +1,8 @@
 import React from "react";
 import NavigableSection from "../../toolComponents/NavigableSection";
 
-function Resume() {
-  const visibilityController = <h1 className="title">{"Portfolio Section"}</h1>;
+function Portfolio() {
+  const visibilityController = <div className="visibility-controller" />;
 
   return (
     <NavigableSection
@@ -12,6 +12,7 @@ function Resume() {
       visibilityController={visibilityController}
     >
       {/*visibilityController*/}
+      <h1 className="title">{"Portfolio Section"}</h1>
       <p className="lorem-ipsum">
         Sunt aute ullamco voluptate ipsum mollit qui Lorem Lorem qui culpa
         reprehenderit esse. Consequat enim adipisicing sunt reprehenderit ut
@@ -41,4 +42,4 @@ function Resume() {
   );
 }
 
-export default Resume;
+export default Portfolio;

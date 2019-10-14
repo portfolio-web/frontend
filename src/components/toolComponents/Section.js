@@ -20,9 +20,7 @@ function Section({ title, className, children }) {
 Section.propTypes = {
   title: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-  children: PropTypes.element,
-  onVisibilityChange: PropTypes.func.isRequired,
-  visibilityController: PropTypes.element.isRequired
+  children: PropTypes.element
 };
 
 export default Section;
