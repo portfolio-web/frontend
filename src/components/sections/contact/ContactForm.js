@@ -3,6 +3,10 @@ import { reduxForm, Field } from "redux-form";
 import PropTypes from "prop-types";
 import ValidatingField from "./CustomField";
 
+import { initialForm } from "../../../redux/initialState";
+import { connect } from "react-redux";
+import ErrorWarning from "../../toolComponents/ErrorWarning";
+
 const validate = values => {
   const errors = {};
 
@@ -20,8 +24,12 @@ const validate = values => {
   return errors;
 };
 
-function MyContactForm({ handleSubmit, valid }) {
+function MyContactForm({ handleSubmit, valid, formSentSuccessfully }) {
   const disabledSubmit = !valid ? "form-submit-disabled" : "";
+  /*const sentWarning = {
+    class: formSentSuccessfully ? "sent-warning" : "unsent-warning",
+    message: formSentSuccessfully ? "Enviado correctamente" : "No enviado"
+  };*/
 
   return (
     <div className="form-container">
@@ -52,6 +60,11 @@ function MyContactForm({ handleSubmit, valid }) {
         >
           SEND
         </button>
+        {formSentSuccessfully ? (
+          <ErrorWarning outerBoxClass="sent-warning">
+            Enviado Corrrectamente
+          </ErrorWarning>
+        ) : null}
       </form>
     </div>
   );
@@ -59,13 +72,21 @@ function MyContactForm({ handleSubmit, valid }) {
 
 MyContactForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  valid: PropTypes.bool
+  valid: PropTypes.bool,
+  formSentSuccessfully: PropTypes.bool
 };
 
 const configureReduxForm = reduxForm({
   form: "contact",
-  validate
+  validate,
+  initialValues: initialForm
 });
 const ContactForm = configureReduxForm(MyContactForm);
 
-export default ContactForm;
+const mapStateToProps = state => {
+  return {
+    formSentSuccessfully: state.sent
+  };
+};
+
+export default connect(mapStateToProps)(ContactForm);

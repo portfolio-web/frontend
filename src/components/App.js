@@ -1,9 +1,9 @@
 import React from "react";
 import TopNavBar from "./TopNavBar";
+
 import Home from "./sections/home/Home";
-import Resume from "./sections/resume/Resume";
-import Portfolio from "./sections/portfolio/Portfolio";
 import Contact from "./sections/contact/Contact";
+
 import { breakPoint } from "../others/values";
 
 function App() {
@@ -14,12 +14,11 @@ function App() {
         contentContainerId="mainColumn"
         totalPageContainerId="totalContainer"
       />
-      <div id="mainColumn" className="main-column">
+      <div id="mainColumn">
         <Home>Home</Home>
-        <Resume>Resume</Resume>
-        <Portfolio>Portfolio</Portfolio>
+        <div className="black-section" />
         <Contact>Contact</Contact>
-        <div className="black-end"></div>
+        <div className="black-section" />
       </div>
     </div>
   );

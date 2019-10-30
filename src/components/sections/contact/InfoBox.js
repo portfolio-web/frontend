@@ -21,7 +21,7 @@ function InfoBox({ icon, children, textSize }) {
 }
 
 InfoBox.propTypes = {
-  icon: PropTypes.element,
+  icon: PropTypes.object,
   children: PropTypes.string,
   textSize: PropTypes.string
 };

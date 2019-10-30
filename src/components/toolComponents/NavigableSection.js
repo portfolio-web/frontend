@@ -76,7 +76,7 @@ NavigableSection.propTypes = {
   path: PropTypes.string.isRequired,
   pathMustBeExact: PropTypes.bool,
   title: PropTypes.string.isRequired,
-  children: PropTypes.element,
+  children: PropTypes.array,
   visibilityController: PropTypes.element.isRequired,
   ...Section.propTypes
 };

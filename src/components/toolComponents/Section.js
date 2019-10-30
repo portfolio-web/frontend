@@ -20,7 +20,7 @@ function Section({ title, className, children }) {
 Section.propTypes = {
   title: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-  children: PropTypes.element
+  children: PropTypes.array
 };
 
 export default Section;

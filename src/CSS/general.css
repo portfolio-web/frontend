@@ -12,43 +12,10 @@ body {
   padding-right: 0;
 }
 
-.main-column {
-  align-content: flex-end;
-}
-
 @media (max-width: 768px) {
   .mobile-container {
     padding: inherit 0 0 0;
     margin: 0px;
     max-width: 100%;
   }
-}
-
-.nav-button {
-  color: #ffffff !important;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 17px;
-  margin: 10px 30px;
-}
-
-.nav-bar {
-  background-color: rgba(46, 46, 46, 0.5) !important;
-}
-
-.black-end {
-  content: "";
-  height: 100px;
-  width: 100%;
-  background-color: #282828;
-}
-
-.visibility-controller {
-  background-color: transparent;
-  width: 1px;
-  height: 100px;
-  position: absolute;
-  left: 50%;
-  top: 33%;
-  visibility: hidden;
 }
