@@ -1,0 +1,21 @@
+@import "./error.css";
+@import "./placeHolderStyles.css";
+@import "./sideBar.css";
+@import "./navBar.css";
+
+.black-section {
+  content: "";
+  height: 100px;
+  width: 100%;
+  background-color: #282828;
+}
+
+.visibility-controller {
+  background-color: transparent;
+  width: 1px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 33%;
+  visibility: hidden;
+}

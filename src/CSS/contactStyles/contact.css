@@ -1,0 +1,13 @@
+@import "./form.css";
+@import "./infoBoxes.css";
+
+.contact-container {
+  position: relative;
+  background-color: rgb(62, 62, 62);
+}
+
+.contact-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}

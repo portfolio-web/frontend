@@ -1,0 +1,21 @@
+body {
+  background-color: #282828;
+  color: #ffffff;
+}
+
+.section {
+  background-color: #282828;
+}
+
+.section-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (max-width: 768px) {
+  .mobile-container {
+    padding: inherit 0 0 0;
+    margin: 0px;
+    max-width: 100%;
+  }
+}

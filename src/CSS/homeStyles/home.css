@@ -1,0 +1,35 @@
+@import "./mmBox.css";
+@import "./letsGetStartedButton.css";
+
+.home-container {
+  background-image: url("../../others/background.png");
+  background-color: rgb(48, 48, 48);
+  background-position: 40% top;
+  padding-top: 56px;
+  background-repeat: no-repeat;
+  height: auto;
+  position: relative;
+}
+
+.home-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.white-line {
+  margin: auto;
+  width: 95%;
+  border-bottom: 1px solid rgba(245, 245, 243, 0.7);
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    background-position: 15% -110px;
+    background-size: 1161px 652px; /* 85% */
+  }
+
+  .white-line {
+    width: 85%;
+  }
+}
