@@ -23,10 +23,10 @@ function ValidatingField({ meta, ...props }) {
   const { touched, error } = meta;
 
   return (
-    <>
+    <div className="input-box">
       <InputField {...props} />
       {touched && (error && <ErrorWarning>{error}</ErrorWarning>)}
-    </>
+    </div>
   );
 }
 

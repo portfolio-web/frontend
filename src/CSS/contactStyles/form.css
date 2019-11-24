@@ -9,6 +9,10 @@
   margin-top: 30px;
 }
 
+.input-box {
+  position: relative;
+}
+
 .form-field {
   display: block;
   margin-top: 10px;
@@ -21,6 +25,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
 .form-field::-webkit-input-placeholder {

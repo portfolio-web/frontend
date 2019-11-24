@@ -33,11 +33,11 @@ function Contact(props) {
 
       <div className="info-boxes-container">
         <InfoBox icon={faMapMarkerAlt}>
-          Coronel Zelaya 358, San Miguel de Tucumán (4000), Tucumán, Argentina
+          Coronel Zelaya 375, San Miguel de Tucumán (4000), Tucumán, Argentina
         </InfoBox>
-        <InfoBox icon={faEnvelope}>marianomedina86@gmail.com</InfoBox>
+        <InfoBox icon={faEnvelope}>nano.medina87@gmail.com</InfoBox>
         <InfoBox icon={faPhoneAlt} textSize="bg">
-          +54 9 381 588 278
+          +353830746498
         </InfoBox>
       </div>
     </NavigableSection>
@@ -45,14 +45,14 @@ function Contact(props) {
 }
 
 Contact.propTypes = {
-  sendContactForm: PropTypes.func.isRequired
+  sendContactForm: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
-  sendContactForm
+  sendContactForm,
 };
 
 export default connect(
   null,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Contact);

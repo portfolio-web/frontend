@@ -33,7 +33,7 @@ function MyContactForm({ handleSubmit, valid, formSentSuccessfully }) {
 
   return (
     <div className="form-container">
-      <h1 className="form-title">CONTACT FORM</h1>
+      <h1 className="form-title">CONTACT</h1>
       <form onSubmit={handleSubmit} className="form-all-fields">
         <Field name="name" component={ValidatingField} placeholder="Name" />
         <Field
@@ -44,7 +44,7 @@ function MyContactForm({ handleSubmit, valid, formSentSuccessfully }) {
         <Field
           name="email"
           component={ValidatingField}
-          placeholder="E-mail *"
+          placeholder="Email *"
         />
         <Field
           name="message"
